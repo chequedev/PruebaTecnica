@@ -3,7 +3,7 @@
 ## Para hacer uso de el proyecto  realiza lo siguiente 
 - Clona el repositorio de la liga
 ~~~ 
-git clone https://github.com/usuario/ChallengeNet.git
+https://github.com/chequedev/PruebaTecnica.git
 ~~~
 
 - Ingresa a el repositorio con el siguiente comando
