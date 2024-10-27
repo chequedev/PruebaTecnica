@@ -1,4 +1,4 @@
-# BancoPagaTodo -Prueba tecnica
+# Prueba tecnica
 
 ## Para hacer uso de el proyecto  realiza lo siguiente 
 - Clona el repositorio de la liga
