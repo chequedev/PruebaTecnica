@@ -16,7 +16,7 @@ var app = builder.Build();
 
 #region Minimal API Opereciones Basicas
 // Endpoint para Suma
-app.MapPost("/Suma", (IServicioOperacionesMatematicas serviceOperacionesMat, Valores_Operacion data) =>
+app.MapPost("/api/Suma", (IServicioOperacionesMatematicas serviceOperacionesMat, Valores_Operacion data) =>
 {
     try
     {
@@ -30,7 +30,7 @@ app.MapPost("/Suma", (IServicioOperacionesMatematicas serviceOperacionesMat, Val
 });
 
 // Endpoint para Resta
-app.MapPost("/Resta", (IServicioOperacionesMatematicas serviceOperacionesMat, Valores_Operacion data) =>
+app.MapPost("/api/Resta", (IServicioOperacionesMatematicas serviceOperacionesMat, Valores_Operacion data) =>
 {
     try
     {
@@ -44,7 +44,7 @@ app.MapPost("/Resta", (IServicioOperacionesMatematicas serviceOperacionesMat, Va
 });
 
 // Endpoint para Multiplicación
-app.MapPost("/Multiplicacion", (IServicioOperacionesMatematicas serviceOperacionesMat, Valores_Operacion data) =>
+app.MapPost("/api/Multiplicacion", (IServicioOperacionesMatematicas serviceOperacionesMat, Valores_Operacion data) =>
 {
     try
     {
@@ -58,7 +58,7 @@ app.MapPost("/Multiplicacion", (IServicioOperacionesMatematicas serviceOperacion
 });
 
 // Endpoint para División
-app.MapPost("/Dividir", (IServicioOperacionesMatematicas serviceOperacionesMat, Valores_Operacion data) =>
+app.MapPost("/api/Dividir", (IServicioOperacionesMatematicas serviceOperacionesMat, Valores_Operacion data) =>
 {
     try
     {

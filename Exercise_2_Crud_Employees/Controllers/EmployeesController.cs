@@ -10,6 +10,8 @@ namespace Exercise_2_Crud_Employees.Controllers
     public class EmployeesController : ControllerBase
     {
         protected IRepositoryEmployees _employees;
+
+        //Se Inyecta el repositorio para hacer uso de la implementacion en el controller
         public EmployeesController(IRepositoryEmployees employees)
         {
             _employees = employees;
