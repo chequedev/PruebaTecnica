@@ -105,7 +105,14 @@ Este controlador permite gestionar empleados en la aplicación. Proporciona oper
 ~~~
 http://tu-api-url/api/employees
 ~~~
-
+- Objeto base de Empleados ( Employees )
+~~~
+{
+"firstName" : "cadena",
+"lastName" : "dcadena",
+"salary" : numerico               
+}
+~~~
 ## Endpoints
 
 ### 1. Listar Empleados
@@ -153,6 +160,15 @@ Ha ocurrido un error: Empleado no encontrado.
 - **Método:** `POST`
 - **Ruta:** `/api/employees`
 - **Descripción:** Genera un nuevo registro de empleado.
+- **body:**
+~~~
+  {
+        "employeeId": "40acc137-de34-44a7-a532-950201abd7de",
+        "firstName": "Ezequiel Lara modified",
+        "lastName": "Herrera",
+        "salary": 322000
+    }
+~~~
 - **Respuesta Exitosa (200 OK):**
 ~~~
   {
@@ -183,7 +199,7 @@ Ha ocurrido un error: Empleado no encontrado.
 ### 3. Elimina un empleado
 
 - **Método:** `DELETE`
-- **Ruta:** `/api/employees`
+- **Ruta:** `/api/employees/{employeeId}`
 - **Descripción:** Elimina un empleado.
 - **Respuesta Exitosa (200 OK):**
 ~~~
@@ -197,6 +213,15 @@ Ha ocurrido un error: Empleado no encontrado.
 
 - **Método:** `PUT`
 - **Ruta:** `/api/employees`
+- **body:**
+~~~
+  {
+        "employeeId": "40acc137-de34-44a7-a532-950201abd7de",
+        "firstName": "Ezequiel Lara modified",
+        "lastName": "Herrera",
+        "salary": 322000
+    }
+~~~
 - **Descripción:** Actualiza el registro de empleado.
 - **Respuesta Exitosa (200 OK):**
 ~~~
