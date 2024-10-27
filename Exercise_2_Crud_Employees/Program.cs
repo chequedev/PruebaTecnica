@@ -12,6 +12,9 @@ builder.Services.AddDbContext<DataContextApp>(config =>
     config.UseSqlServer(builder.Configuration.GetConnectionString("Connection_db"));
 });
 
+builder.Services.AddTransient<IRepositoryEmployees,RepositoryEmployees>();
+
+
 
 var app = builder.Build();
 

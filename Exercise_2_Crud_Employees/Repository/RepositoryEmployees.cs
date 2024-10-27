@@ -21,27 +21,46 @@ namespace Exercise_2_Crud_Employees.Repository
        
         public Employees Actualizar(Employees entity)
         {
-            _dbContext.Add(entity);
+            var infoActualizar = _dbContext.employees.Find(entity.EmployeeId);
+
+            if (infoActualizar == null)
+                throw new Exception("Empleado no encontrado.");
+
+            infoActualizar.FirstName=entity.FirstName;
+            infoActualizar.LastName=entity.LastName;
+            infoActualizar.Salary=entity.Salary;
+
             _dbContext.SaveChanges();
             return entity;
         }
 
         public void Eliminar(Guid identificador)
         {
-            var employee = _dbContext.employees.Find(identificador);
+            var infoEliminar = _dbContext.employees.Find(identificador);
 
-            if (employee != null)
-            {
-                _dbContext.employees.Remove(employee);
-                _dbContext.SaveChanges();
+            if (infoEliminar == null)
+                throw new Exception("Empleado no encontrado.");
 
-            }
+
+            _dbContext.employees.Remove(infoEliminar);
+            _dbContext.SaveChanges();
+
+           
 
         }
 
         public IEnumerable<Employees> Listar()
         {
             return _dbContext.employees;
+        }
+
+        public Employees GetById(Guid employeeId)
+        {
+            var info = _dbContext.employees.Find(employeeId);
+            if (info == null)
+                throw new Exception("Empleado no encontrado.");
+
+            return info;
         }
     }
 }
