@@ -13,7 +13,7 @@ namespace Exercise_2_Crud_Employees.Models
                 
         }
 
-        public Guid EmployeeId  { get; }
+        public Guid EmployeeId  { get; set; }
         
         [Required (ErrorMessage ="El FirstName es requerido")]
         [MaxLength(50,ErrorMessage ="Solo admite como maximo 50 caracteres")]

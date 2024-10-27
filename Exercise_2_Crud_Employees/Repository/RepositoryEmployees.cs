@@ -1,29 +1,47 @@
-﻿using Exercise_2_Crud_Employees.Models;
+﻿using Exercise_2_Crud_Employees.DataContext;
+using Exercise_2_Crud_Employees.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Exercise_2_Crud_Employees.Repository
 {
     public class RepositoryEmployees : IRepositoryEmployees
-
     {
-        
-        public Employees Actualizar(Employees entity)
+        protected DataContextApp _dbContext;
+        public RepositoryEmployees(DataContextApp db)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Eliminar(Guid identificador)
-        {
-            throw new NotImplementedException();
+            this._dbContext = db;
         }
 
         public Employees Insertar(Employees entity)
         {
-            throw new NotImplementedException();
+            _dbContext.employees.Add(entity);
+            _dbContext.SaveChanges();
+            return entity;
+        }
+       
+        public Employees Actualizar(Employees entity)
+        {
+            _dbContext.Add(entity);
+            _dbContext.SaveChanges();
+            return entity;
+        }
+
+        public void Eliminar(Guid identificador)
+        {
+            var employee = _dbContext.employees.Find(identificador);
+
+            if (employee != null)
+            {
+                _dbContext.employees.Remove(employee);
+                _dbContext.SaveChanges();
+
+            }
+
         }
 
         public IEnumerable<Employees> Listar()
         {
-            throw new NotImplementedException();
+            return _dbContext.employees;
         }
     }
 }
